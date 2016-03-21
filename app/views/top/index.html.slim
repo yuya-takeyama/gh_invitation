@@ -1,3 +1,5 @@
-div= "Hi! #{@user.login}"
+div= "Hi! #{github_username}"
+
+= form_tag invite_path, method: :post do
 
 = link_to 'Logout', logout_path, method: :post
