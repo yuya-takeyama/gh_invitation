@@ -1,5 +1,12 @@
 div= "Hi! #{github_username}"
 
 = form_tag invite_path, method: :post do
+  dl
+    dt GitHub Username
+    dd= text_field_tag :username
+    dt Role
+    dd= select_tag :role, options_for_select(['member', 'admin'])
+
+  = submit_tag 'Invite'
 
 = link_to 'Logout', logout_path, method: :post

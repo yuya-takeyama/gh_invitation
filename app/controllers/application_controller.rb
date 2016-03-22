@@ -18,7 +18,8 @@ class ApplicationController < ActionController::Base
     @inviter ||= GhInvitation::Inviter.new(
       Octokit::Client.new(
         access_token: Rails.configuration.github_access_token,
-      )
+      ),
+      Rails.configuration.github_organization,
     )
   end
 
